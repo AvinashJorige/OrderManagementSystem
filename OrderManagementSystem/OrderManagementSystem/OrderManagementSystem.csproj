@@ -145,6 +145,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3rd_Party_Share\schema.sql" />
     <Content Include="App_Data\OrderManagementDB.mdf" />
     <Content Include="App_Data\OrderManagementDB_log.ldf">
       <DependentUpon>OrderManagementDB.mdf</DependentUpon>
