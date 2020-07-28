@@ -74,11 +74,11 @@ namespace DataRepository
         {
             context.SaveChanges();
         }
-        public IEnumerable ExecuteReader(string sqlQuery)
+        public IEnumerable ExecuteReader<T>(string sqlQuery) where T : class
         {
             try
             {
-                var result = context.Database.SqlQuery(sqlQuery);
+                var result = context.Database.SqlQuery<T>(sqlQuery, null);
                 return result.ToList();
             }
             catch (Exception)
@@ -88,7 +88,7 @@ namespace DataRepository
             }
         }
 
-        public IEnumerable ExecuteReader(string storedProcedureName, SqlParameter[] parameters = null)
+        public IEnumerable ExecuteReader<T>(string storedProcedureName, SqlParameter[] parameters = null) where T : class
         {
             if (parameters != null && parameters.Any())
             {
@@ -133,12 +133,12 @@ namespace DataRepository
                 }
 
                 var query = parameterBuilder.ToString();
-                var result = context.Database.SqlQuery(query);
+                var result = context.Database.SqlQuery<T>(query, null);
                 return result.ToList();
             }
             else
             {
-                var result = context.Database.SqlQuery(string.Format("EXEC {0}", storedProcedureName));
+                var result = context.Database.SqlQuery<T>(string.Format("EXEC {0}", storedProcedureName));
                 return result.ToList();
             }
         }
