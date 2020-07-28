@@ -48,10 +48,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities.cs" />
+    <Compile Include="Mapping\CustomerMapping.cs" />
+    <Compile Include="Mapping\OrderDetailsMap.cs" />
+    <Compile Include="Mapping\OrderShippingMap.cs" />
+    <Compile Include="Mapping\OrderStatusCodeMap.cs" />
+    <Compile Include="Mapping\OrderStatusMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\UnitOfMeasureMap.cs" />
+    <Compile Include="Mapping\UserRoleMap.cs" />
+    <Compile Include="Mapping\UsersMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
