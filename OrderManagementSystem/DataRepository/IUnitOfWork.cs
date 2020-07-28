@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataRepository
 {
@@ -25,9 +20,9 @@ namespace DataRepository
         /// </summary>
         void Save();
 
-        IEnumerable ExecuteReader(string sqlQuery);
+        IEnumerable ExecuteReader<T>(string sqlQuery) where T : class;
 
-        IEnumerable ExecuteReader(string storedProcedureName, SqlParameter[] parameters = null);
+        IEnumerable ExecuteReader<T>(string storedProcedureName, SqlParameter[] parameters = null) where T : class;
 
         void ExecuteNonQuery(string commandText, CommandType commandType, SqlParameter[] parameters = null);
     }
