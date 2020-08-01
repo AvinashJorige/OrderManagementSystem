@@ -22,7 +22,7 @@ namespace DataRepository
 
         IEnumerable ExecuteReader<T>(string sqlQuery) where T : class;
 
-        IEnumerable ExecuteReader<T>(string storedProcedureName, SqlParameter[] parameters = null) where T : class;
+        IEnumerable ExecuteReader<T>(string storedProcedureName, SqlParameter[] parameters = null) where T : class; 
 
         void ExecuteNonQuery(string commandText, CommandType commandType, SqlParameter[] parameters = null);
     }

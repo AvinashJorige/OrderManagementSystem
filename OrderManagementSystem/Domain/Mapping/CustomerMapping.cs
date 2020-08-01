@@ -17,7 +17,7 @@ namespace Domain.Mapping
             this.Property(t => t.Cust_Password) .IsOptional();
             this.Property(t => t.IsActive)      .IsOptional();
 
-            this.ToTable("Tbl_Customer_M");
+            this.ToTable("Tbl_Customer_T");
             this.Property(t => t.Id)            .HasColumnName("Id");
             this.Property(t => t.Cust_Id)       .HasColumnName("Cust_Id");
             this.Property(t => t.Cust_Name)     .HasColumnName("Cust_Name");

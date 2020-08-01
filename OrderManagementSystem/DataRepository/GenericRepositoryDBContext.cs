@@ -56,5 +56,8 @@ namespace DataRepository
                 modelBuilder.Configurations.Add(configurationInstance);
             }
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Types().Configure(t => t.MapToStoredProcedures());
         }
     }
+}

@@ -78,7 +78,7 @@ namespace DataRepository
         {
             try
             {
-                var result = context.Database.SqlQuery<T>(sqlQuery, null);
+                var result = context.Database.SqlQuery<T>(sqlQuery);
                 return result.ToList();
             }
             catch (Exception)
@@ -133,7 +133,7 @@ namespace DataRepository
                 }
 
                 var query = parameterBuilder.ToString();
-                var result = context.Database.SqlQuery<T>(query, null);
+                var result = context.Database.SqlQuery<T>(query);
                 return result.ToList();
             }
             else

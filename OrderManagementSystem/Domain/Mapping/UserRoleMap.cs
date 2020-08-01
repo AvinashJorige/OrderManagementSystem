@@ -17,7 +17,7 @@ namespace Domain.Mapping
             this.Property(t => t.IsActive)      .IsOptional();
             this.Property(t => t.User_Role_Id)  .IsOptional();
 
-            this.ToTable("Tbl_Unit_of_measure_M");
+            this.ToTable("Tbl_User_Role_M");
             this.Property(t => t.Id)            .HasColumnName("Id");
             this.Property(t => t.User_Role)     .HasColumnName("User_Role");
             this.Property(t => t.CreatedDate)   .HasColumnName("CreatedDate");
